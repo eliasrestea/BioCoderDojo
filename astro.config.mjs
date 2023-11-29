@@ -5,10 +5,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://eliasrestea.github.io/BioCoderDojo/',
-<<<<<<< HEAD
-  base: '/BioCoderDojo',
+  base: '/BioCoderDojo/',
 });
-=======
-  base: '/',
-});
->>>>>>> 6158884 (squash)
