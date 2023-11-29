@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.autofill-bg:-webkit-autofill,
+.autofill-bg:-webkit-autofill:hover, 
+.autofill-bg:-webkit-autofill:focus, 
+.autofill-bg:-webkit-autofill:active {
+  @apply text-gray-900 bg-white border-gray-300;
+  transition: background-color 5000s ease-in-out 0s;
+}

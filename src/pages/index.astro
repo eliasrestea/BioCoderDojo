@@ -1,7 +1,19 @@
 ---
-import Base from "../layouts/Base.astro";
----
+import { Icon } from "astro-icon";
 
+import Base from "../layouts/Base.astro";
+import Header from "../components/header.astro"
+import About from "../components/about.astro"
+import Footer from "../components/footer.astro"
+import Form from "../components/form.astro"
+---
 <Base>
-<h1>belo</h1>
+      <Header />
+      <div class="relative -mt-12 lg:-mt-24">
+        <Icon name=waves-bottom />
+      </div>
+      <About />
+      <Icon name=waves-top />
+      <Form />
+      <!-- <Footer /> -->
 </Base>
