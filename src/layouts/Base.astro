@@ -42,6 +42,14 @@ const { title, description, image, noindex, canonical } = Astro.props;
         background: linear-gradient(to bottom right, #19233D, #1E4964, #4FA4A4, #66C9C9, #7FE3EE);
       }
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX6ZM2E0X8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RX6ZM2E0X8');
+    </script>
   </head>
   <body class="leading-normal tracking-normal text-white gradient">
     <slot />
