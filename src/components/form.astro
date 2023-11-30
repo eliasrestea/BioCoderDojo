@@ -60,48 +60,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const loader = document.getElementById('loader');
     const submitButton = document.getElementById('submit');
     
-    if (form instanceof HTMLFormElement) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            form.classList.add('bg-gray-600', 'blur-xs')
-            form.classList.remove('bg-white')
-            loader?.classList.add('loader')
-            submitButton?.setAttribute('disabled', 'true');
-
-            var formData = new FormData(form);
-            var object: {};
-            formData.forEach((value, key) => { object[key] = value; });
-            var json = JSON.stringify(object);
-            fetch('https://script.google.com/macros/s/AKfycbwzZXuqAgrFBs9IY993bzgyaJYCyjemu9sqxAYdPjEXlbUU3v3b2YCXa38G992Ton3E/exec', {
-                redirect: "follow",  
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8'
-                },
-                body: json
-              }).then((response) => {
-                  form.classList.add('bg-white')
-                  form.classList.remove('bg-gray-600', 'blur-xs')
-                  loader?.classList.remove('loader')
-                  submitButton?.removeAttribute('disabled');
-                  if (response.ok) {
-                      return response.json();
-                  } else {
-                      throw new Error('Network response was not ok.');
-                  }
-              }).then(data => {
-                    if (data.status === 'success') {
-                      showAlert('Success! You have signed up.', 'green');
-                      form.reset();
-                      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-                  } else {
-                      showAlert('Error: ' + data.message, 'red');
-                  }
-              }).catch(error => {
-                  showAlert('Error: Unable to submit the form.', 'red');
-              });
-        });
-    }
+    
 });
 
 function showAlert(message: string, color: string) {
