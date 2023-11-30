@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             submitButton?.setAttribute('disabled', 'true');
 
             var formData = new FormData(form);
-            var object: { [key: string]: FormDataEntryValue } = {};
+            var object: {};
             formData.forEach((value, key) => { object[key] = value; });
             var json = JSON.stringify(object);
             fetch('https://script.google.com/macros/s/AKfycbwzZXuqAgrFBs9IY993bzgyaJYCyjemu9sqxAYdPjEXlbUU3v3b2YCXa38G992Ton3E/exec', {
