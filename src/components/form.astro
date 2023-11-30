@@ -34,7 +34,7 @@ import "../styles/loader.scss";
                       <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                   </svg>
               </div>
-              <input type="text" name="birthday_date" id="birthday_date" class="autofill-bg block ps-10 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" required />
+              <input datepicker type="text" name="birthday_date" id="birthday_date" class="autofill-bg block ps-10 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" required />
               <label for="birthday_date" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 left-10 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Data nasterii </label>
           </div>  
           <div class="grid md:grid-cols-2 md:gap-6">
@@ -53,14 +53,54 @@ import "../styles/loader.scss";
     </div>  
 </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/datepicker.min.js"></script>
 <script>
 window.addEventListener('DOMContentLoaded', (event) => {
     const form = document.getElementById('userForm');
     const loader = document.getElementById('loader');
     const submitButton = document.getElementById('submit');
     
-    
+    if (form instanceof HTMLFormElement) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            form.classList.add('bg-gray-600', 'blur-xs')
+            form.classList.remove('bg-white')
+            loader?.classList.add('loader')
+            submitButton?.setAttribute('disabled', 'true');
+
+            var formData = new FormData(form);
+            var object: { [key: string]: FormDataEntryValue } = {};
+            formData.forEach((value, key) => { object[key] = value; });
+            var json = JSON.stringify(object);
+            fetch('https://script.google.com/macros/s/AKfycbwzZXuqAgrFBs9IY993bzgyaJYCyjemu9sqxAYdPjEXlbUU3v3b2YCXa38G992Ton3E/exec', {
+                redirect: "follow",  
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: json
+              }).then((response) => {
+                  form.classList.add('bg-white')
+                  form.classList.remove('bg-gray-600', 'blur-xs')
+                  loader?.classList.remove('loader')
+                  submitButton?.removeAttribute('disabled');
+                  if (response.ok) {
+                      return response.json();
+                  } else {
+                      throw new Error('Network response was not ok.');
+                  }
+              }).then(data => {
+                    if (data.status === 'success') {
+                      showAlert('Success! You have signed up.', 'green');
+                      form.reset();
+                      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                  } else {
+                      showAlert('Error: ' + data.message, 'red');
+                  }
+              }).catch(error => {
+                  showAlert('Error: Unable to submit the form.', 'red');
+              });
+        });
+    }
 });
 
 function showAlert(message: string, color: string) {
