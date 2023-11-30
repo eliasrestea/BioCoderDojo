@@ -5,13 +5,13 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/header.astro"
 import About from "../components/about.astro"
 import Footer from "../components/footer.astro"
-// import Form from "../components/form.astro"
+import Form from "../components/form.astro"
 ---
 <Base>
-      <Header client:load />
+      <Header />
         <Icon name=waves-bottom />
       <About />
       <Icon name=waves-top />
-      <!-- <Form /> -->
+      <Form />
       <Footer />
 </Base>
