@@ -2,31 +2,31 @@
 import "../styles/main.scss";
 import { ViewTransitions } from 'astro:transitions';
 import { Seo } from "astro-seo-meta"
-
-export interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  noindex?: boolean;
-  canonical?: string;
-}
-
-const { title, description, image, noindex, canonical } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <Seo
-      title="My Astro website"
-      description="My blazing fast astro website"
-      keywords={["website", "blog", "astro"]}
+      title="BioCoderDojo"
+      description="BioCoderDojo timisoara's website"
+      keywords={[
+        "Educație Non-Formală", "Mentorat Voluntar", "Colaborare Universitară",
+        "Colaborare Corporativă", "Parteneriate Liceale", "Angajarea Studenților",
+        "Educație în Biologie Sintetică", "Învățare Genetică", "Formare Bioinformatică",
+        "Tehnologie Biomedicală", "Expunere Bioart", "Discuții Bioetică",
+        "Varianta CoderDojo", "Științele Vieții și Tehnologia", "Învățare Exploratorie",
+        "Unelte Biologie Moleculară", "Utilizare Echipament PCR", "Practică Electrophoreză",
+        "Întâlniri cu Experți", "Vizite Laboratoare Cercetare", "Expunere Industrie",
+        "Participare Târg Științific", "Competiții Internaționale",
+        "Descoperiri Științifice Istorice", "Programul Exploratori Nobel"
+    ]}
       icon="/favicon.ico"
       themeColor="#000000"
       colorScheme="light"
       facebook={{
           image: "/facebook.png",
-          url: "https://astro.build",
+          url: "https://www.facebook.com/BioCoderDojoTimisoara/",
           type: "website",
       }}
       twitter={{
@@ -36,6 +36,7 @@ const { title, description, image, noindex, canonical } = Astro.props;
       }}
     />
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <ViewTransitions />
     <style>
       .gradient {

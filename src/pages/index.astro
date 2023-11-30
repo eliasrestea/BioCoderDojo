@@ -8,12 +8,10 @@ import Footer from "../components/footer.astro"
 import Form from "../components/form.astro"
 ---
 <Base>
-      <Header />
-      <div class="relative -mt-12 lg:-mt-24">
+      <Header client:load />
         <Icon name=waves-bottom />
-      </div>
       <About />
       <Icon name=waves-top />
-      <Form />
-      <!-- <Footer /> -->
+      <Form client:idle />
+      <Footer client:visible />
 </Base>
