@@ -9,3 +9,6 @@
   @apply text-gray-900 bg-white border-gray-300;
   transition: background-color 5000s ease-in-out 0s;
 }
+.gradient {
+  background: linear-gradient(45deg, rgb(18, 24, 27) 50%, rgb(29, 32, 59) 100%)
+}

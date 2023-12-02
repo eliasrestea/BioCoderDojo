@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
 import header from "../images/header-photo.webp";
 ---
 
@@ -14,18 +14,16 @@ import header from "../images/header-photo.webp";
     </p>
     <a
       href="#userFormSection"
-      class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+      class="mx-auto lg:mx-0 hover:underline bg-lime-300 text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
       Join Us
     </a>
   </div>
   <!--Right Col-->
   <div class="w-full md:w-3/5 md:ps-32 text-center pt-8">
-    <Image
-      src={header}
+    <Icon
+      name=white-logo
       alt="biocoderdojo logo"
       class="w-full md:w-4/5 z-50"
-      width="1700"
-      height="1000"
       format="webp"
       loading="eager"
     />
