@@ -39,9 +39,6 @@ import { Seo } from "astro-seo-meta"
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <ViewTransitions />
   </head>
-  <body class="leading-normal tracking-normal text-white gradient">
-    <slot />
-  </body>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX6ZM2E0X8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -50,4 +47,7 @@ import { Seo } from "astro-seo-meta"
 
     gtag('config', 'G-RX6ZM2E0X8');
   </script>
+  <body class="leading-normal tracking-normal text-white gradient">
+    <slot />
+  </body>
 </html>

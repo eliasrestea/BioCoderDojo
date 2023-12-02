@@ -72,10 +72,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
             var object: { [key: string]: FormDataEntryValue } = {};
             formData.forEach((value, key) => { object[key] = value; });
             var json = JSON.stringify(object);
-            fetch('https://script.google.com/macros/s/AKfycbxW7ovoj5Ham8Yie6LGomAM3TrSn7aooOk_wm-7bmeAvN3ws0bsxn82z-ezbw3rEtPv/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbwrImMvPVi2UJOhDwJldeoZcacVx_SwasJPRqM6WhF6XnzLUD7d9Yg3pAmbK6Z7sUDe/exec', {
                 redirect: "follow",  
                 method: 'POST',
-                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'text/plain;charset=utf-8'
                 },
@@ -97,7 +96,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
               }).catch(error => {
                   console.log(error);
                   showAlert('Error: Unable to submit the form, please contact us.', 'red');
-              }).then(data => {
+              }).finally(() => {
                   form.classList.add('bg-white')
                   form.classList.remove('bg-gray-600', 'blur-xs')
                   loader?.classList.remove('loader')
