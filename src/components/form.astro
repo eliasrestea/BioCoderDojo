@@ -96,7 +96,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                   }
               }).catch(error => {
                   console.log(error);
-                  showAlert('Error: Unable to submit the form.', 'red');
+                  showAlert('Error: Unable to submit the form, please contact us.', 'red');
               }).then(data => {
                   form.classList.add('bg-white')
                   form.classList.remove('bg-gray-600', 'blur-xs')
