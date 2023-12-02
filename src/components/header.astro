@@ -1,29 +1,33 @@
 ---
 import { Image } from "astro:assets";
-import header from "../images/header-photo.webp"
+import header from "../images/header-photo.webp";
 ---
-<div class="container px-3 mx-auto flex flex-col md:flex-row items-center py-4">
-    <!--Left Col-->
-    <div class="flex flex-col w-full md:w-2/5 justify-center items-center md:items-start text-center md:text-left">
-      <h1 class="my-8 sm:my-4 text-5xl font-bold leading-tight">
-        Join BioCoderDojo
-      </h1>
-      <p class="leading-normal text-2xl mb-8">
-        Dive into BioCoding with BioCoderDojo - Join the Innovation Journey!
-      </p>
-      <a href="#userForm" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-        Join Us
-      </a>
-    </div>
-    <!--Right Col-->
-    <div class="w-full md:w-3/5 md:ps-32 text-center pt-8">
-      <Image
+
+<div class="container px-3 mx-auto flex flex-col md:flex-row items-center py-4 md:my-20">
+  <!--Left Col-->
+  <div class="flex flex-col w-full md:w-2/5 justify-center items-center text-center md:text-left">
+    <h1 class="my-8 sm:my-4 text-5xl font-bold leading-tight">
+      Join BioCoderDojo
+    </h1>
+    <p class="leading-normal text-2xl mb-4 align-center text-center">
+      Dive into BioCoding with BioCoderDojo - Join the Innovation Journey!
+    </p>
+    <a
+      href="#userFormSection"
+      class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+      Join Us
+    </a>
+  </div>
+  <!--Right Col-->
+  <div class="w-full md:w-3/5 md:ps-32 text-center pt-8">
+    <Image
       src={header}
       alt="biocoderdojo logo"
       class="w-full md:w-4/5 z-50"
       width="1700"
       height="1000"
       format="webp"
-      loading="eager" />
-    </div>
+      loading="eager"
+    />
   </div>
+</div>

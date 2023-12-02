@@ -9,6 +9,9 @@ export default {
             blur: {
                 xs: '2px',
             }
+        },
+        fontFamily: {
+            'sans': ['Barlow', 'sans-serif'],
         }
     },
     plugins: [

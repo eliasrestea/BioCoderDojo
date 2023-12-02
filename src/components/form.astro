@@ -1,7 +1,7 @@
 ---
 import "../styles/loader.scss";
 ---
-<section class="container mx-auto text-center py-6 mb-12">
+<section id="userFormSection" class="container mx-auto text-center py-6 mb-12">
     <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
       Alaturate noua
     </h2>
@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             var object: { [key: string]: FormDataEntryValue } = {};
             formData.forEach((value, key) => { object[key] = value; });
             var json = JSON.stringify(object);
-            fetch('https://script.google.com/macros/s/AKfycbwzZXuqAgrFBs9IY993bzgyaJYCyjemu9sqxAYdPjEXlbUU3v3b2YCXa38G992Ton3E/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbwJ9w7_wK82XTB9EQqPCd24N7r94R6fG2tHQmor27TITvZeQrT4cUrzFEODBgoIPvo/exec', {
                 redirect: "follow",  
                 method: 'POST',
                 headers: {
